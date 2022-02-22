@@ -35,4 +35,4 @@ adalah layanan hosting yang populer untuk Git.
 #### 1. Branching
 Pada task ini, membuat branch development, featureA dan featureB pada repository.  
 Berikut ini adalah screenshot command pembuatan branch:  
- 
+![Branching]("/2_Version Control and Branch Management (Git)/screenshots/Screenshot (46).png") 
