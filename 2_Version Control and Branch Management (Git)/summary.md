@@ -36,7 +36,7 @@ adalah layanan hosting yang populer untuk Git.
 Pada task ini, membuat branch development, featureA dan featureB pada repository.  
 Berikut ini adalah screenshot command pembuatan branch:  
 ![Branching](./screenshots/branching.png)  
-Hasil yang didapatkan setelah membuat branch:
+Hasil yang didapatkan setelah membuat branch:  
 ![Hasil branching](./screenshots/branch_list.png)
 
 #### 2. Push
