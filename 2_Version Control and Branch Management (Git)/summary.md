@@ -30,4 +30,9 @@ adalah salah satu *Version Control System* yang populer untuk digunakan oleh par
 
 #### GitHub
 adalah layanan hosting yang populer untuk Git.
-
+  
+## Task
+#### 1. Branching
+Pada task ini, membuat branch development, featureA dan featureB pada repository.  
+Berikut ini adalah screenshot command pembuatan branch:  
+ 
