@@ -44,7 +44,7 @@ public class Task1VokalKonsonan {
         //Output
         System.out.println("Jumlah Huruf Vokal = "+jumlahHurufVokal);
         System.out.println("Jumlah Huruf Konsonan = "+jumlahHurufKonsonan);
-        System.out.println("Total Karakter = "+inputString.length());
+        System.out.println("Total Karakter = "+(jumlahHurufVokal+jumlahHurufKonsonan));
         
     }
 
