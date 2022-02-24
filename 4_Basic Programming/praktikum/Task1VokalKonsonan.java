@@ -1,11 +1,16 @@
+import java.util.Scanner;
+
 public class Task1VokalKonsonan {
     public static void main(String[] args) {
+        //Objek untuk input (Scanner)
+        Scanner sc = new Scanner(System.in);
         
-        //Test String :
-        String testString = "Alterra Indonesia";
+        //[INPUT]:
+        System.out.print("Input teks : ");
+        String inputString = sc.nextLine();
 
         //[PROSES]:
-        process(testString);
+        process(inputString);
 
     }
 
