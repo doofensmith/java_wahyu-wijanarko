@@ -32,7 +32,7 @@ adalah batas memori yang diharapkan dapat menyelesaikan operasi - operasi yang d
 ## Task
 #### 1. Prime Number
 Algoritma untuk mencari bilangan prima yang lebih cepat dari O(n) atau O(n/2).  
-Kode program:
+Kode program:  
 [Task1PrimeNumber.java](./praktikum/Task1PrimeNumber.java)  
   
 Output:
@@ -41,7 +41,7 @@ Output:
 
 #### 2. Exponentiation
 Algoritma untuk mencari pangkat bilangan yang lebih cepat dari O(n).  
-Kode program:
+Kode program:  
 [Task2Exponentiation.java](./praktikum/Task2Exponentiation.java)  
   
 Output:
