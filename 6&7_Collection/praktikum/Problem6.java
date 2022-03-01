@@ -20,12 +20,13 @@ public class Problem6 {
 
         //process
         List<Integer> sumOfSubArray = new ArrayList<>();
-        for (int i = 0; i < input.size()-subArraySize; i++) {
+        for (int i = 0; i <= input.size()-subArraySize; i++) {
             sumOfSubArray.add(sum(input.subList(i, (i+subArraySize))));
         }
 
         //output
         System.out.println("Input : "+input+", k = "+subArraySize);
+        System.out.println("sub array sum : "+sumOfSubArray);
         System.out.println("Output : "+Collections.max(sumOfSubArray));
 
     }
