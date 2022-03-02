@@ -3,11 +3,11 @@ public class Task2Exponentiation {
     public static void main(String[] args) {
 
         long startTime = System.nanoTime();
-        System.out.println(pow2(2, 3));  // 8
-        System.out.println(pow2(5, 3));  // 125
-        System.out.println(pow2(10, 2)); // 100
-        System.out.println(pow2(2, 5)); // 32
-        System.out.println(pow2(7, 3));  // 343
+        System.out.println(pow(2, 3));  // 8
+        System.out.println(pow(5, 3));  // 125
+        System.out.println(pow(10, 2)); // 100
+        System.out.println(pow(2, 5)); // 32
+        System.out.println(pow(7, 3));  // 343
         long endTime = System.nanoTime();
         System.out.println("Time : "+(endTime-startTime));
 
