@@ -1,12 +1,13 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Stream;
 
 public class Problem5 {
     public static void main(String[] args) {
@@ -42,7 +43,13 @@ public class Problem5 {
             }
         }
 
-        System.out.println("Output : "+item);
+        //sort map by value
+        LinkedHashMap<String, Integer> sortedMapByValue = new LinkedHashMap<>();
+        Stream<Map.Entry<String, Integer>> sort = item.entrySet().stream().sorted(Map.Entry.comparingByValue());
+        sort.forEach(v -> sortedMapByValue.put(v.getKey(), v.getValue()));
+        
+        //output
+        System.out.println("Output : "+sortedMapByValue);
     }
 
 
