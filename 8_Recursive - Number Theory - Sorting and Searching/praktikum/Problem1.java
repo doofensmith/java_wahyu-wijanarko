@@ -2,12 +2,16 @@ public class Problem1 {
     public static void main(String[] args) {
 
         //input
-        int inputNumber = 5;
+        int inputNumber = 1;
 
         //output
         System.out.println("Input : "+inputNumber);
         System.out.println("Output : "+primeX(inputNumber));
         
+        // for (int i = 0; i < 10; i++) {
+        //     System.out.println(i+" "+isPrime(i));
+        // }
+
     }
 
     //prima ke x
@@ -15,11 +19,18 @@ public class Problem1 {
         int output = 0;
 
         int xPrimeNumber = 0;
-        while (xPrimeNumber != n) {
-            if (isPrime(output)) {
-                xPrimeNumber++;
-            }
-            output++;
+        while (true) {
+
+            if (xPrimeNumber == n) {
+                break;
+            }else {
+                if (isPrime(output)) {
+                    xPrimeNumber++;
+                    output++;
+                }else {
+                    output++;
+                }                            
+            }            
         }
 
         return output-1;
@@ -29,9 +40,13 @@ public class Problem1 {
     private static Boolean isPrime(int number) {
         Boolean isPrime = true;
 
-        if (number%2 == 0) {
+        if (number == 2) {
+            isPrime = true;
+        }else if (number%2 == 0) {
             isPrime = false;
-        }else {
+        }else if (number < 2) {
+            isPrime = false;
+        } else {
             for (int i = 3; i < Math.sqrt(number)+1; i=i+2) {
                 if (number%i == 0) {
                     isPrime = false;
@@ -39,6 +54,8 @@ public class Problem1 {
                 }
             }
         }
+
+        
 
         return isPrime;
     }
