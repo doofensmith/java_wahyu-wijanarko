@@ -5,12 +5,12 @@ public class Problem1 {
         int inputNumber = 1;
 
         //output
-        System.out.println("Input : "+inputNumber);
-        System.out.println("Output : "+primeX(inputNumber));
+        // System.out.println("Input : "+inputNumber);
+        // System.out.println("Output : "+primeX(inputNumber));
         
-        // for (int i = 0; i < 10; i++) {
-        //     System.out.println(i+" "+isPrime(i));
-        // }
+        for (int i = 0; i < 20; i++) {
+            System.out.println(i+" "+isPrime(i));
+        }
 
     }
 
