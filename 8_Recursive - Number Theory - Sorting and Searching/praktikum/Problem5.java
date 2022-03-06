@@ -7,6 +7,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.SortedMap;
+import java.util.function.Consumer;
 import java.util.stream.Stream;
 
 public class Problem5 {
@@ -24,7 +26,7 @@ public class Problem5 {
     //most appear item
     private static void mostAppearItem(List<String> arr) {
         //set
-        Set<String> keyString = new HashSet<>(arr);
+        Set<String> keyString = new HashSet<>(arr); //glng,js,rb
 
         //create map
         Map<String, Integer> item = new HashMap<>();

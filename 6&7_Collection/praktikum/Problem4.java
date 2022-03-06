@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Problem4 {
@@ -6,11 +7,7 @@ public class Problem4 {
     public static void main(String[] args) {
         
         //input
-        List<Integer> input1 = new ArrayList<>();
-        input1.add(1);
-        input1.add(2);
-        input1.add(3);
-        input1.add(4);
+        List<Integer> input1 = new ArrayList<>(Arrays.asList(1,2,3,4));
 
         List<Integer> input2 = new ArrayList<>();
         input2.add(1);
