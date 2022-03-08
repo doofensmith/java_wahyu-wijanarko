@@ -29,10 +29,6 @@ public class Problem3 {
                 frogJump+=Math.abs(arr[position+1]-arr[position]);
                 position+=1;
             }
-//            System.out.println(position);
-//            System.out.println("fj = "+frogJump);
-//            System.out.println("p2 - p1 "+Math.abs(arr[position+2]-arr[position+1]));
-//            System.out.println("p1 - p "+Math.abs(arr[position+1]-arr[position]));
         }
 
         return frogJump;
