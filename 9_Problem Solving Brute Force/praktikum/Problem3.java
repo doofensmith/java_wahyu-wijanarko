@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class Problem3 {
     public static void main(String[] args) {
@@ -9,8 +6,7 @@ public class Problem3 {
         //list of dragon head diameter
         List<Integer> dragonHead = new ArrayList<>(Arrays.asList(7, 2));
         //list of knight height
-        List<Integer> knighHeight = new ArrayList<>(Arrays.asList(2, 1, 8, 5));
-
+        List<Integer> knighHeight = new ArrayList<>(Arrays.asList(4, 3, 1, 2));
 
         //output
         System.out.println("Input : "+dragonHead+", "+knighHeight);
