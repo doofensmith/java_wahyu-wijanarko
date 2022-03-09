@@ -10,7 +10,7 @@ public class Problem4 {
 
         //input
         List<Integer> list = new ArrayList<>(Arrays.asList(1, 1, 3, 5, 5, 6, 7));
-        int value = 3;
+        int value = 8;
 
         //output
         System.out.println("Input : "+list);
