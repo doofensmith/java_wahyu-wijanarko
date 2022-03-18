@@ -93,3 +93,41 @@ Berdasarkan database sebelumnya tentang penjualan outlet digital, gunakan perint
         Screenshot:  
         ![delete2.png](./screenshots/Screenshot%20(210).png)
         
+
+## Task 2
+Data aggregation.
+1. Gabungkan data buku dari author id 1 dan 2.
+    - Screenshot:  
+        ![ss1](./screenshots/Screenshot%20(211).png)
+
+2. Daftar buku dan harga author id=1.
+    - Screenshot:  
+        ![ss2](./screenshots/Screenshot%20(212).png)
+
+3. Total jumlah halaman buku author id = 2.
+    - Screnshot:
+        ![ss3](./screenshots/Screenshot%20(214).png)
+
+4. Semua field books dan author terkait.
+    - Screenshot:  
+        ![ss4](./screenshots/Screenshot%20(216).png)
+
+5. Semua field books, author, dan publisher.
+    - Screenshot:  
+        ![ss5](./screenshots/Screenshot%20(221).png)
+
+6. Summary data author, books, dan publisher.
+    - Screenshot:  
+        ![ss6](./screenshots/Screenshot%20(226).png)
+
+7. Diskon harga buku berdasarkan pembagian harga.
+    - Screenshot:  
+        ![ss7](./screenshots/Screenshot%20(225).png)
+
+8. Nama buku, harga, nama author dan nama publisher urutkan dari harga termahal ke termurah.
+    - Screenshot:  
+        ![ss8](./screenshots/Screenshot%20(224).png)
+
+9. Menampilkan data ke 3 dan ke 4 dari data buku.
+    - Screenshot:  
+        ![ss9](./screenshots/Screenshot%20(222).png)
