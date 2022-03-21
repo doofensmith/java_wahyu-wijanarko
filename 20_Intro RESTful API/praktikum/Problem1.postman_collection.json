@@ -1,0 +1,575 @@
+{
+	"info": {
+		"_postman_id": "a5cd9804-5696-409b-9f1c-79049f2d2fae",
+		"name": "Problem1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Target API 1",
+			"item": [
+				{
+					"name": "GET 1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/everything?apiKey={{apiKey}}&q=microsoft",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"everything"
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{apiKey}}"
+								},
+								{
+									"key": "q",
+									"value": "microsoft"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET 2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/everything?apiKey={{apiKey}}&q=microsoft&pageSize=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"everything"
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{apiKey}}"
+								},
+								{
+									"key": "q",
+									"value": "microsoft"
+								},
+								{
+									"key": "pageSize",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET 3",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/everything?apiKey={{apiKey}}&q=microsoft&sortBy=popularity",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"everything"
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{apiKey}}"
+								},
+								{
+									"key": "q",
+									"value": "microsoft"
+								},
+								{
+									"key": "sortBy",
+									"value": "popularity"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET 5",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/everything?apiKey={{apiKey}}&q=apple&pageSize=5",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"everything"
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{apiKey}}"
+								},
+								{
+									"key": "q",
+									"value": "apple"
+								},
+								{
+									"key": "pageSize",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET 4",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/everything?apiKey={{apiKey}}&q=peopl&pageSize=5&sortBy=popularity",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"everything"
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{apiKey}}"
+								},
+								{
+									"key": "q",
+									"value": "peopl"
+								},
+								{
+									"key": "pageSize",
+									"value": "5"
+								},
+								{
+									"key": "sortBy",
+									"value": "popularity"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Target API 2",
+			"item": [
+				{
+					"name": "GET 1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/vehicles/18",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"vehicles",
+								"18"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET 2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/people/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"people",
+								"1"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET 3",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/films",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"films"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET 4",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/starships/3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"starships",
+								"3"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET 5",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/vehicles/4",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"vehicles",
+								"4"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "format",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Target API 3",
+			"item": [
+				{
+					"name": "GET Token",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/token?client_id=wahyu&client_secret=secret",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"token"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "wahyu"
+								},
+								{
+									"key": "client_secret",
+									"value": "secret"
+								}
+							]
+						},
+						"description": "https://app.swaggerhub.com/apis-docs/sepulsa/RentABook-API/1.0.0"
+					},
+					"response": []
+				},
+				{
+					"name": "GET Book",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/book/1234",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"book",
+								"1234"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "wahyu",
+									"disabled": true
+								},
+								{
+									"key": "client_secret",
+									"value": "secret",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": null,
+									"disabled": true
+								}
+							]
+						},
+						"description": "https://app.swaggerhub.com/apis-docs/sepulsa/RentABook-API/1.0.0"
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Book",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1234,\r\n  \"title\": \"Judul Buku Satu\",\r\n  \"isbn\": \"1-234-5678-9101112-13\",\r\n  \"writer\": \"Dr. Who\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/book/1234",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"book",
+								"1234"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "wahyu",
+									"disabled": true
+								},
+								{
+									"key": "client_secret",
+									"value": "secret",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": null,
+									"disabled": true
+								}
+							]
+						},
+						"description": "https://app.swaggerhub.com/apis-docs/sepulsa/RentABook-API/1.0.0"
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Book",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/book/1234",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"book",
+								"1234"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "wahyu",
+									"disabled": true
+								},
+								{
+									"key": "client_secret",
+									"value": "secret",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": null,
+									"disabled": true
+								}
+							]
+						},
+						"description": "https://app.swaggerhub.com/apis-docs/sepulsa/RentABook-API/1.0.0"
+					},
+					"response": []
+				},
+				{
+					"name": "POST Book",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"client_id\": 1234,\r\n  \"client_key\": \"CLIENT01\",\r\n  \"client_secret\": \"SECRET01\",\r\n  \"status\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/book",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"book"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "wahyu",
+									"disabled": true
+								},
+								{
+									"key": "client_secret",
+									"value": "secret",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": null,
+									"disabled": true
+								}
+							]
+						},
+						"description": "https://app.swaggerhub.com/apis-docs/sepulsa/RentABook-API/1.0.0"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
