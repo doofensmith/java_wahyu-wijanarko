@@ -1,6 +1,21 @@
 # (22) Getting Started REST Spring Boot (MVC)
 ## Summary
+Materi pada section ini meliputi:
+1. HTTP Flow
+2. Annotation
+3. Struktur Project
 
+#### HTTP Flow
+adalah proses transaksi data dengan method http dengan proses client request ke server dan server memberikan response.
+
+#### Annotation
+Perubahan metadata pada objek Java.
+
+#### Struktur Project
+Struktur MVC terdapat:
+1. Entity
+2. Controller
+3. Repository
 
 ## Task
 #### 1. Problem 1 - H2 Database
