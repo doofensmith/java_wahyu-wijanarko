@@ -37,3 +37,7 @@ Result:
 ![delete.png](./screenshots/delete_post.png)  
 Result:  
 ![get_all_post4.png](./screenshots/get_all_post_afterdelete.png)
+
+#### 2. Problem 2 - Repository
+1. Crud Repository memberikan berbagai fungsi manipulasi data.
+2. Jpa Repository memberikan fungsi manipulasi data yang lebih luas.
