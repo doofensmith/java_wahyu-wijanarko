@@ -8,33 +8,33 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(value = "/v1", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/v1")
 public class ProductController {
 
     @Autowired
     ProductService service;
 
-    @GetMapping("/product")
+    @GetMapping(value = "/product")
     public ResponseEntity<Object> getAllProduct() {
         return service.getAllProduct();
     }
 
-    @GetMapping("/product/{id}")
+    @GetMapping(value = "/product/{id}")
     public ResponseEntity<Object> getProductById(@PathVariable Long id) {
         return service.getProductById(id);
     }
 
-    @PostMapping("/product")
+    @PostMapping(value = "/product")
     public ResponseEntity<Object> saveNewProduct(@RequestBody ProductDto productDto) {
         return service.saveNewProduct(productDto);
     }
 
-    @PutMapping("/product/{id}")
+    @PutMapping(value = "/product/{id}")
     public ResponseEntity<Object> updateProduct(@PathVariable Long id, @RequestBody ProductDto productDto) {
         return service.updateProduct(id, productDto);
     }
 
-    @DeleteMapping("/product/{id}")
+    @DeleteMapping(value = "/product/{id}")
     public ResponseEntity<Object> deleteProduct(@PathVariable Long id) {
         return service.deleteProduct(id);
     }
