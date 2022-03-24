@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Data
 @MappedSuperclass
-public class BaseDao {
+public abstract class BaseDao {
 
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
@@ -27,7 +27,7 @@ public class BaseDao {
     @PrePersist
     void onCreate() {
         this.createdAt = LocalDateTime.now();
-        this.isDeleted = false;
+        this.isDeleted = Boolean.FALSE;
     }
 
     @PreUpdate
