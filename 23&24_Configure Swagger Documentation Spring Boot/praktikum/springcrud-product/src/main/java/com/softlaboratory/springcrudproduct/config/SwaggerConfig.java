@@ -19,11 +19,12 @@ public class SwaggerConfig {
 
     @Bean
     public Docket productApi() {
-        return new Docket(DocumentationType.SWAGGER_2)
+        return new Docket(DocumentationType.OAS_30)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.softlaboratory.springcrudproduct.controller"))
                 .paths(PathSelectors.any())
-                .build();
+                .build()
+                .apiInfo(metaData());
     }
 
     private ApiInfo metaData() {

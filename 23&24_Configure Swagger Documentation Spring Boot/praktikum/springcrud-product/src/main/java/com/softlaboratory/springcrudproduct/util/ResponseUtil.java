@@ -20,7 +20,7 @@ public class ResponseUtil extends BaseResponse {
 
         BaseResponse response = BaseResponse.builder()
                 .timestamp(LocalDateTime.now())
-                .response_code(status)
+                .responseCode(String.valueOf(status.value()))
                 .message(message)
                 .data(data)
                 .build();
