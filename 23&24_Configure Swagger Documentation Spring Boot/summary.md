@@ -1,4 +1,4 @@
-# (23) Configure Swagger Documentation Spring Boot
+# (23&24) Configure Swagger Documentation Spring Boot & JPA (Spring Database SQL)
 ## Summary
 Materi pada section ini meliputi:
 1. Dokumentasi API
