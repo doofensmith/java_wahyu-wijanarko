@@ -26,7 +26,7 @@ Alasan menggunakan swagger untuk dokumentasi API:
 2. Digunakan oleh perusahaan besar.
 3. Dokumentasi API yang baik.
 
-## Task
+## Task 1
 #### 1. Membuat CRUD Product
 1. Get All Product
 ![get_all.png](./screenshots/get_all1.png)
@@ -54,3 +54,25 @@ Alasan menggunakan swagger untuk dokumentasi API:
 #### 2. Membuat dokumentasi API dengan Swagger
 Screenshot halaman swagger:
 ![swagger.png](./screenshots/swagger.png)
+
+## Task 2
+#### 1. Penambahan property pada swagger
+![swagge_add_property.png](./screenshots/swagger_add_anotation.png)
+
+#### 2. Perubahan database dari H2 menjadi Postgresql dan membuat entity baru.
+- Perubahan file [application.properties](./praktikum/springcrud-product/src/main/resources/application.properties)
+Screenshot:  
+![app.prop.png](./screenshots/applicationproperties.png)  
+- Test CRUD Entity Customer:
+   1. POST, Membuat Customer baru:  
+      Screenshot:  
+      ![create_customer.png](./screenshots/create_customer.png)
+   2. PUT, Update Customer dengan Id:  
+      Screenshot:  
+      ![get_customer.png](./screenshots/edit_customer.png)
+   3. GET, Melihat Customer dengan Id:  
+      Screenshot:  
+      ![create_customer.png](./screenshots/read_customer_by_id.png)
+   4. DELETE, Menghapus Customer dengan Id:  
+      Screenshot:    
+      ![create_customer.png](./screenshots/delete_customer.png)

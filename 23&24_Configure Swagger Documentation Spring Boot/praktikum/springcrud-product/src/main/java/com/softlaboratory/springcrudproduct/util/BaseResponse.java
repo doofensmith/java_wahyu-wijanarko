@@ -1,5 +1,7 @@
 package com.softlaboratory.springcrudproduct.util;
 
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,16 +17,17 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Data
 @MappedSuperclass
+@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class BaseResponse {
 
     private LocalDateTime timestamp;
-    private HttpStatus response_code;
+    private String responseCode;
     private String message;
     private Object data;
 
-    @PrePersist
-    void onCreate() {
-        this.timestamp = LocalDateTime.now();
-    }
+//    @PrePersist
+//    void onCreate() {
+//        this.timestamp = LocalDateTime.now();
+//    }
 
 }
