@@ -1,12 +1,9 @@
 package com.softlaboratory.relationaldbproject.util;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import javax.swing.text.html.parser.Entity;
 import java.time.LocalDateTime;
 
 @SuperBuilder

@@ -13,7 +13,7 @@ import javax.persistence.*;
 @SuperBuilder
 @Entity
 @Table(name = "stocks")
-public class StocksDao {
+public class StocksDao extends BaseDao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,10 +21,10 @@ public class StocksDao {
     private Long stockId;
 
     @OneToOne
-    @JoinColumn(name = "product_id")
+    @JoinColumn(name = "product_id", nullable = false)
     private ProductsDao productsDao;
 
-    @Column(name = "quantity")
+    @Column(name = "quantity", nullable = false)
     private int quantity;
 
 }

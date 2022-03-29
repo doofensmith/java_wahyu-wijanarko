@@ -22,10 +22,10 @@ public class BrandsDao extends BaseDao {
     @Column(name = "brand_id")
     private Long brandId;
 
-    @Column(name = "brand_name")
+    @Column(name = "brand_name", nullable = false)
     private String brandName;
 
-    @OneToMany(mappedBy = "brands")
+    @OneToMany(mappedBy = "brandsDao")
     private List<ProductsDao> productsDaoList;
 
 }

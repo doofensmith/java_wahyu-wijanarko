@@ -21,20 +21,20 @@ public class ProductsDao extends BaseDao {
     @Column(name = "product_id")
     private Long productId;
 
-    @Column(name = "product_name")
+    @Column(name = "product_name", nullable = false)
     private String productName;
 
     @ManyToOne
-    @JoinColumn(name = "brand_id")
+    @JoinColumn(name = "brand_id", nullable = false)
     private BrandsDao brandsDao;
 
     @ManyToOne
-    @JoinColumn(name = "category_id")
+    @JoinColumn(name = "category_id", nullable = false)
     private CategoriesDao categoriesDao;
 
-    @Column(name = "model_year")
+    @Column(name = "model_year", nullable = false)
     private Year modelYear;
 
-    @Column(name = "listPrice")
+    @Column(name = "listPrice", nullable = false)
     private double listPrice;
 }
