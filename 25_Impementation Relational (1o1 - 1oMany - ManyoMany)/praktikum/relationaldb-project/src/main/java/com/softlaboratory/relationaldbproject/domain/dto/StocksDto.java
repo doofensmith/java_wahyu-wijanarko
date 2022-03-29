@@ -7,18 +7,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.Year;
-
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Data
+@Builder
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class ProductsDto {
-    private Long productId;
-    private String productName;
-    private BrandsDto brand;
-    private CategoriesDto category;
-    private Year modelYear;
-    private double listPrice;
+public class StocksDto {
+
+    private Long stockId;
+    private ProductsDto product;
+    private int quantity;
+
 }

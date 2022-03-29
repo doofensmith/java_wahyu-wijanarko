@@ -21,10 +21,10 @@ public class CategoriesDao extends BaseDao {
     @Column(name = "category_id")
     private Long categoryId;
 
-    @Column(name = "category_name")
+    @Column(name = "category_name", nullable = false)
     private String categoryName;
 
-    @OneToMany(mappedBy = "categories")
+    @OneToMany(mappedBy = "categoriesDao")
     private List<ProductsDao> productsDaoList;
 
 }

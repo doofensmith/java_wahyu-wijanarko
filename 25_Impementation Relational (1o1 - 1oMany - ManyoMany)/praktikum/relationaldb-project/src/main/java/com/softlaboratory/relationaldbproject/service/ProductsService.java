@@ -10,6 +10,10 @@ import com.softlaboratory.relationaldbproject.domain.dto.ProductsDto;
 import com.softlaboratory.relationaldbproject.repository.ProductsRepository;
 import com.softlaboratory.relationaldbproject.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -31,11 +35,11 @@ public class ProductsService {
             productsDtoList.add(ProductsDto.builder()
                     .productId(productsDao.getProductId())
                     .productName(productsDao.getProductName())
-                    .brandsDto(BrandsDto.builder()
+                    .brand(BrandsDto.builder()
                             .brandId(productsDao.getBrandsDao().getBrandId())
                             .brandName(productsDao.getBrandsDao().getBrandName())
                             .build())
-                    .categoriesDto(CategoriesDto.builder()
+                    .category(CategoriesDto.builder()
                             .categoryId(productsDao.getCategoriesDao().getCategoryId())
                             .categoryName(productsDao.getCategoriesDao().getCategoryName())
                             .build())
@@ -56,11 +60,11 @@ public class ProductsService {
             ProductsDto productDto = ProductsDto.builder()
                     .productId(productsDao.get().getProductId())
                     .productName(productsDao.get().getProductName())
-                    .brandsDto(BrandsDto.builder()
+                    .brand(BrandsDto.builder()
                             .brandId(productsDao.get().getBrandsDao().getBrandId())
                             .brandName(productsDao.get().getBrandsDao().getBrandName())
                             .build())
-                    .categoriesDto(CategoriesDto.builder()
+                    .category(CategoriesDto.builder()
                             .categoryId(productsDao.get().getCategoriesDao().getCategoryId())
                             .categoryName(productsDao.get().getCategoriesDao().getCategoryName())
                             .build())
@@ -79,10 +83,10 @@ public class ProductsService {
         ProductsDao productsDao = ProductsDao.builder()
                 .productName(requestBody.getProductName())
                 .brandsDao(BrandsDao.builder()
-                        .brandId(requestBody.getBrandsDto().getBrandId())
+                        .brandId(requestBody.getBrand().getBrandId())
                         .build())
                 .categoriesDao(CategoriesDao.builder()
-                        .categoryId(requestBody.getCategoriesDto().getCategoryId())
+                        .categoryId(requestBody.getCategory().getCategoryId())
                         .build())
                 .modelYear(requestBody.getModelYear())
                 .listPrice(requestBody.getListPrice())
@@ -93,13 +97,11 @@ public class ProductsService {
         ProductsDto productDto = ProductsDto.builder()
                 .productId(productsDao.getProductId())
                 .productName(productsDao.getProductName())
-                .brandsDto(BrandsDto.builder()
+                .brand(BrandsDto.builder()
                         .brandId(productsDao.getBrandsDao().getBrandId())
-                        .brandName(productsDao.getBrandsDao().getBrandName())
                         .build())
-                .categoriesDto(CategoriesDto.builder()
+                .category(CategoriesDto.builder()
                         .categoryId(productsDao.getCategoriesDao().getCategoryId())
-                        .categoryName(productsDao.getCategoriesDao().getCategoryName())
                         .build())
                 .modelYear(productsDao.getModelYear())
                 .listPrice(productsDao.getListPrice())
@@ -115,10 +117,10 @@ public class ProductsService {
             ProductsDao productDaoNew = productsDaoOld.get();
             productDaoNew.setProductName(requestBody.getProductName());
             productDaoNew.setBrandsDao(BrandsDao.builder()
-                    .brandId(requestBody.getBrandsDto().getBrandId())
+                    .brandId(requestBody.getBrand().getBrandId())
                     .build());
             productDaoNew.setCategoriesDao(CategoriesDao.builder()
-                    .categoryId(requestBody.getCategoriesDto().getCategoryId())
+                    .categoryId(requestBody.getCategory().getCategoryId())
                     .build());
             productDaoNew.setModelYear(requestBody.getModelYear());
             productDaoNew.setListPrice(requestBody.getListPrice());
@@ -127,13 +129,11 @@ public class ProductsService {
             ProductsDto productDto = ProductsDto.builder()
                     .productId(productDaoNew.getProductId())
                     .productName(productDaoNew.getProductName())
-                    .brandsDto(BrandsDto.builder()
+                    .brand(BrandsDto.builder()
                             .brandId(productDaoNew.getBrandsDao().getBrandId())
-                            .brandName(productDaoNew.getBrandsDao().getBrandName())
                             .build())
-                    .categoriesDto(CategoriesDto.builder()
+                    .category(CategoriesDto.builder()
                             .categoryId(productDaoNew.getCategoriesDao().getCategoryId())
-                            .categoryName(productDaoNew.getCategoriesDao().getCategoryName())
                             .build())
                     .modelYear(productDaoNew.getModelYear())
                     .listPrice(productDaoNew.getListPrice())
@@ -155,6 +155,83 @@ public class ProductsService {
         }else {
             return ResponseUtil.build(HttpStatus.BAD_REQUEST, AppConstant.KEY_DATA_NOT_FOUND, null);
         }
+    }
+
+    public ResponseEntity<Object> getAllProductByName(String productName, String category) {
+        List<ProductsDao> productsDaoList = productsRepository.findByProductNameAndCategory(productName, category);
+        List<ProductsDto> productsDtoList = new ArrayList<>();
+        for (ProductsDao productsDao : productsDaoList) {
+            productsDtoList.add(ProductsDto.builder()
+                    .productId(productsDao.getProductId())
+                    .productName(productsDao.getProductName())
+                    .brand(BrandsDto.builder()
+                            .brandId(productsDao.getBrandsDao().getBrandId())
+                            .brandName(productsDao.getBrandsDao().getBrandName())
+                            .build())
+                    .category(CategoriesDto.builder()
+                            .categoryId(productsDao.getCategoriesDao().getCategoryId())
+                            .categoryName(productsDao.getCategoriesDao().getCategoryName())
+                            .build())
+                    .modelYear(productsDao.getModelYear())
+                    .listPrice(productsDao.getListPrice())
+                    .build()
+            );
+        }
+
+        return ResponseUtil.build(HttpStatus.OK,AppConstant.KEY_SUCCESS,productsDtoList);
+
+    }
+
+    public ResponseEntity<Object> sortProductByCategory() {
+        List<ProductsDao> productsDaoList = productsRepository.sortProductByCategory(Sort.by(Sort.Direction.ASC, "categoriesDao.categoryName"));
+        List<ProductsDto> productsDtoList = new ArrayList<>();
+        for (ProductsDao productsDao : productsDaoList) {
+            productsDtoList.add(ProductsDto.builder()
+                    .productId(productsDao.getProductId())
+                    .productName(productsDao.getProductName())
+                    .brand(BrandsDto.builder()
+                            .brandId(productsDao.getBrandsDao().getBrandId())
+                            .brandName(productsDao.getBrandsDao().getBrandName())
+                            .build())
+                    .category(CategoriesDto.builder()
+                            .categoryId(productsDao.getCategoriesDao().getCategoryId())
+                            .categoryName(productsDao.getCategoriesDao().getCategoryName())
+                            .build())
+                    .modelYear(productsDao.getModelYear())
+                    .listPrice(productsDao.getListPrice())
+                    .build()
+            );
+        }
+
+        return ResponseUtil.build(HttpStatus.OK,AppConstant.KEY_SUCCESS,productsDtoList);
+
+    }
+
+    public ResponseEntity<Object> findAllProductPaging(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        Page<ProductsDao> productsDaoPage = productsRepository.findAll(pageable);
+        List<ProductsDao> productsDaoList = productsDaoPage.getContent();
+        List<ProductsDto> productsDtoList = new ArrayList<>();
+        for (ProductsDao productsDao : productsDaoList) {
+            productsDtoList.add(ProductsDto.builder()
+                    .productId(productsDao.getProductId())
+                    .productName(productsDao.getProductName())
+                    .brand(BrandsDto.builder()
+                            .brandId(productsDao.getBrandsDao().getBrandId())
+                            .brandName(productsDao.getBrandsDao().getBrandName())
+                            .build())
+                    .category(CategoriesDto.builder()
+                            .categoryId(productsDao.getCategoriesDao().getCategoryId())
+                            .categoryName(productsDao.getCategoriesDao().getCategoryName())
+                            .build())
+                    .modelYear(productsDao.getModelYear())
+                    .listPrice(productsDao.getListPrice())
+                    .build()
+            );
+        }
+
+        return ResponseUtil.build(HttpStatus.OK,AppConstant.KEY_SUCCESS,productsDtoList);
+
     }
 
 }
