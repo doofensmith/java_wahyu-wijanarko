@@ -16,9 +16,10 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "phone")
     private String username;
     private String password;
-    private String role;
+    //private String role;
 
     @Column(columnDefinition = "boolean default true")
     private boolean active = true;
