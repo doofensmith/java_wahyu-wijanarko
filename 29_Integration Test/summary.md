@@ -19,9 +19,15 @@ Testing yang dilakukan pada module dan melakukan testing secara berkelompok.
 
 ## Task
 Membuat integration testing pada sebuah controller.
-- Endpoint get all product
-![getall.png](./screenshots/getall.png)
-- Endpoint save new product
-![save.png](./screenshots/savenew.png)
+- Endpoint get all product  
+![getall.png](./screenshots/get_all.png)  
+- Endpoint get product by id  
+![getbyid.png](./screenshots/get_by_id.png)  
+- Endpoint save new product  
+![save.png](./screenshots/savenew.png)  
+- Endpoint update product  
+![update.png](./screenshots/update.png)  
+- Endpoint delete product  
+![delete.png](./screenshots/delete.png)  
 
 

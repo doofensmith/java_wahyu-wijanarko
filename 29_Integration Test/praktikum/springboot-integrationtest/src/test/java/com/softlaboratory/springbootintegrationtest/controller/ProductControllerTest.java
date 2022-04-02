@@ -1,7 +1,6 @@
 package com.softlaboratory.springbootintegrationtest.controller;
 
 import com.softlaboratory.springbootintegrationtest.repository.ProductRepository;
-import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -16,7 +15,7 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -64,7 +63,7 @@ class ProductControllerTest {
     }
 
     @Test
-    public void saveNewProduct_WithGoodPayload() throws Exception {
+    public void saveNewProduct() throws Exception {
 
         JSONObject payload = new JSONObject();
         payload.put("name","test product");
@@ -87,16 +86,15 @@ class ProductControllerTest {
     }
 
     @Test
-    public void saveNewProduct_WithBadPayload() throws Exception {
-
+    public void updateProduct() throws Exception {
         JSONObject payload = new JSONObject();
         payload.put("name","test product");
         payload.put("description","test description");
-        payload.put("stock", false);
-        payload.put("price","asdasd");
+        payload.put("stock", 916);
+        payload.put("price",12000);
 
         RequestBuilder requestBuilder = MockMvcRequestBuilders
-                .post("/v1/product")
+                .patch("/v1/product/1")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(payload.toString())
                 .accept(MediaType.APPLICATION_JSON);
@@ -105,15 +103,13 @@ class ProductControllerTest {
                 .perform(requestBuilder)
                 .andReturn();
 
-        assertEquals(400, response.getResponse().getStatus());
-
+        assertEquals(200, response.getResponse().getStatus());
     }
 
     @Test
-    public void saveNewProduct_WithoutPayload() throws Exception {
-
+    public void deleteProduct() throws Exception {
         RequestBuilder requestBuilder = MockMvcRequestBuilders
-                .post("/v1/product")
+                .delete("/v1/product/1")
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON);
 
@@ -121,18 +117,7 @@ class ProductControllerTest {
                 .perform(requestBuilder)
                 .andReturn();
 
-        assertEquals(400, response.getResponse().getStatus());
-
-    }
-
-    @Test
-    public void updateProduct_WithIdAndPayload() throws Exception {
-
-    }
-
-    @Test
-    public void deleteProduct_WithId() throws Exception {
-
+        assertEquals(200, response.getResponse().getStatus());
     }
 
 }
