@@ -42,13 +42,13 @@ Unit merupakan bagian terkecil dalam sebuah aplikasi. Tujuannya adalah memvalida
 
 ## Task
 ### Melakukan Unit Testing
-Melakukan Unit Testing pada bagian service pada project Springboot sebelumnya yang dibuat dengan database NoSQL Mongodb.
-1. Find By Id and Return null
+Melakukan Unit Testing minimal 3 pada bagian service pada project Springboot sebelumnya yang dibuat dengan database NoSQL Mongodb.
+1. Save success
 Screenshot:  
-![findbyidreturnnull.png](./screenshots/findbyid_returnnull.png)
-2. Find By Id and Return Object
+![save_success.png](./screenshots/save_success.png)
+2. Save failed bad payload
 Screenshot:  
-![findbyreturnobject.png](./screenshots/findbyid_getobject.png)
-3. Save New Product
+![savebadpayload.png](./screenshots/save_badpayload.png)
+3. Delete success
 Screenshot:  
-![save.png](./screenshots/saveproduct.png)
+![delete.png](./screenshots/delete_success.png)
