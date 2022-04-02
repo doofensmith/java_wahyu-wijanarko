@@ -28,7 +28,7 @@ public class ProductController {
         return service.saveNewProduct(productDto);
     }
 
-    @PutMapping(value = "/product/{id}")
+    @PatchMapping(value = "/product/{id}")
     public ResponseEntity<Object> updateProduct(@PathVariable Long id, @RequestBody ProductDto productDto) {
         return service.updateProduct(id, productDto);
     }
