@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+    <Properties>
+        <Property name="LOG_CLR">{FATAL=bright red, ERROR=red, WARN=red, INFO=blue, DEBUG=white, TRACE=white}</Property>
+        <Property name="LOG_PATTERN">
+<!--            %clr{-}{faint}-->
+<!--            %clr{${sys:PID}}{magenta}-->
+            %style{%d{yy-MM-dd HH:mm:ss.SSS}}{black} %highlight{%5p}${LOG_CLR} %clr{[%15.15t]}{faint} %clr{%-40.40c{10}}{yellow}  : %m%n%xwEx
+        </Property>
+    </Properties>
+    <Appenders>
+        <Console name="ConsoleAppender" target="SYSTEM_OUT" follow="true">
+            <PatternLayout pattern="${LOG_PATTERN}" disableAnsi="false"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.softlaboratory.springloggingproject" level="debug" additivity="false">
+            <AppenderRef ref="ConsoleAppender" />
+        </Logger>
+
+        <Root level="info">
+            <AppenderRef ref="ConsoleAppender" />
+        </Root>
+    </Loggers>
+</Configuration>
