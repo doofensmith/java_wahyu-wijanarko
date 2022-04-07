@@ -13,7 +13,7 @@ import javax.persistence.*;
 @Data
 @SuperBuilder
 @Entity
-@Table(name = "post")
+@Table(name = "m_post")
 public class PostDao extends BaseDao {
 
     @Id
@@ -30,6 +30,6 @@ public class PostDao extends BaseDao {
     private String category;
 
     @ManyToOne
-    private AuthorDao author;
+    private AuthorDao authorDao;
 
 }

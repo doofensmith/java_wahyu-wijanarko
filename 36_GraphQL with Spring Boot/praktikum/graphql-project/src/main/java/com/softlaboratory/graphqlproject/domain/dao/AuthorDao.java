@@ -7,13 +7,14 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @SuperBuilder
 @Entity
-@Table(name = "author")
+@Table(name = "m_author")
 public class AuthorDao extends BaseDao {
 
     @Id
@@ -25,6 +26,5 @@ public class AuthorDao extends BaseDao {
 
     @Column(name = "thumbnail")
     private String thumbnail;
-
 
 }
