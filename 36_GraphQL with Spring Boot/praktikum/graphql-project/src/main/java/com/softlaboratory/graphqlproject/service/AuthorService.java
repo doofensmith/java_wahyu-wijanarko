@@ -45,4 +45,19 @@ public class AuthorService {
         }
     }
 
+    public AuthorDto addAuthor(String name, String thumbnail) {
+        try {
+            AuthorDto authorDto = AuthorDto.builder()
+                    .name(name)
+                    .thumbnail(thumbnail)
+                    .build();
+
+            AuthorDao authorDao = modelMapper.map(authorDto, AuthorDao.class);
+            authorDao = authorRepository.save(authorDao);
+            return modelMapper.map(authorDao, AuthorDto.class);
+        }catch (Exception e) {
+            throw e;
+        }
+    }
+
 }

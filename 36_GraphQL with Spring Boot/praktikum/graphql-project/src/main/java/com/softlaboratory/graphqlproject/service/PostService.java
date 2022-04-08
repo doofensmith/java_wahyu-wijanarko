@@ -84,7 +84,7 @@ public class PostService {
                         .authorId(authorId)
                         .build();
                 PostDao postDao = modelMapper.map(postDto, PostDao.class);
-                postDao.setAuthor(authorDao.get());
+                postDao.setAuthorDao(authorDao.get());
                 postDao = postRespository.save(postDao);
                 return modelMapper.map(postDao, PostDto.class);
             }else {
