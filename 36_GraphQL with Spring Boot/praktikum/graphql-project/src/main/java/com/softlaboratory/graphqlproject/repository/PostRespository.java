@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public interface PostRespository extends JpaRepository<PostDao, Long> {
 
-    @Query(value = "select p from m_post p order by p.createdAt desc limit :limit offset :offset", nativeQuery = true)
+    @Query(value = "select * from m_post order by created_at desc limit :limit offset :offset", nativeQuery = true)
     List<PostDao> getRecentPost(@Param("limit") int limit, @Param("offset") int offset);
 
     //List<PostDao> findAllByAuthor(AuthorDao authorDao);

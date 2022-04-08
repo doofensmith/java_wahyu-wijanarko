@@ -17,11 +17,12 @@ type Author {
 type Query {
     getAllAuthor: [Author]
     getAllPost: [Post]
-    recentPost(count: Int, offset: Int): [Post]!
+    recentPost(count: Int, offset: Int): [Post]
 }
 
 
 # The Root Mutation for the application
 type Mutation {
     writePost(title: String!, text: String!, category: String, authorId: Int!) : Post!
+    addAuthor(name: String!, thumbnail: String): Author!
 }
