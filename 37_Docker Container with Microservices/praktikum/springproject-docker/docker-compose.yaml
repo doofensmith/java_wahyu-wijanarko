@@ -1,0 +1,15 @@
+version: 3.8
+services:
+  app1:
+    image: springboot-docker
+    container_name: app1
+    external_links:
+      - postgresql:postgresql
+    ports:
+      - "8080:8080"
+    networks:
+      - doofen
+
+    networks:
+      doofen:
+        external: true
