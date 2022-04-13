@@ -84,7 +84,7 @@ jobs:
       - name: Build and Push Image to Docker
         uses: docker/build-push-action@v2
         with:
-          file: './39_CICD with Microservices/praktikum/springboot-simple/Dockerfile'
+          file: './39_CICD with Microservices/praktikum/springboot-simple/deployment.Dockerfile'
           context: .
           push: true
           tags: doofensmith/springboot-simple:latest
