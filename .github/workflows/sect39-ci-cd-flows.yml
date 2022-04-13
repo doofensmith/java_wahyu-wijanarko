@@ -10,7 +10,7 @@ on:
 # global level working directory
 defaults:
   run:
-    working-directory: './39_CICD with Microservices/praktikum/springboot-simple'
+    working-directory: './39_CICD with Microservices/praktikum/springboot-simple/'
 
 jobs:
   # 1st Job, run Testing
@@ -70,7 +70,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
-      - run: cd '39_CICD with Microservices/praktikum/springboot-simple'
       # Build and Push Image to Docker
       - name: Build and Push Image to Docker
         uses: docker/build-push-action@v2
