@@ -84,7 +84,7 @@ jobs:
       - name: Build and Push Image to Docker
         uses: docker/build-push-action@v2
         with:
-          cache-from:
+          cache-from: |
             doofensmith/springboot-simple: cache
           push: true
           tags: doofensmith/springboot-simple:latest
