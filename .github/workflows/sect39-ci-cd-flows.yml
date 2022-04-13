@@ -81,7 +81,7 @@ jobs:
 
   # 3rd job, deploy to aws
   deploy_to_aws:
-    needs: push_to_docker
+    needs: build
     name: Deploy App to AWS
     runs-on: ubuntu-latest
     # job steps
