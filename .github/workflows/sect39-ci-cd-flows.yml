@@ -15,7 +15,7 @@ defaults:
 jobs:
   # 1st Job, run Testing
   tests:
-    name: Running Unit Test/Integration Test
+    name: Test
     # run on ubuntu with latest version
     runs-on: ubuntu-latest
     # jobs steps
@@ -42,7 +42,7 @@ jobs:
   # 2nd job, build project
   build:
     needs: tests
-    name: Build Project Package and Push to Docker
+    name: Build
     runs-on: ubuntu-latest
     # job steps
     steps:
@@ -82,7 +82,7 @@ jobs:
   # 3rd job, deploy to aws
   deploy_to_aws:
     needs: build
-    name: Deploy App to AWS
+    name: Deploy
     runs-on: ubuntu-latest
     # job steps
     steps:
