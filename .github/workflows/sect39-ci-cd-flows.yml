@@ -10,7 +10,7 @@ on:
 # global level working directory
 defaults:
   run:
-    working-directory: './39_CICD with Microservices/praktikum/springboot-simple/'
+    working-directory: './39_CICD with Microservices/praktikum/springboot-simple'
 
 jobs:
   # 1st Job, run Testing
@@ -74,6 +74,7 @@ jobs:
       - name: Build and Push Image to Docker
         uses: docker/build-push-action@v2
         with:
+          file: './39_CICD with Microservices/praktikum/springboot-simple/deployment.Dockerfile'
           context: .
           push: true
           tags: doofensmith/springboot-simple:latest
