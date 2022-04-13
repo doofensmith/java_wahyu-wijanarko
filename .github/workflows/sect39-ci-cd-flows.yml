@@ -7,6 +7,11 @@ on:
     branches:
       - master
 
+# global level working directory
+defaults:
+  run:
+    working-directory: './39_CICD with Microservices/praktikum/springboot-simple'
+
 jobs:
   # 1st Job, run Testing
   tests:
@@ -16,14 +21,14 @@ jobs:
     # jobs steps
     steps:
       # checkout repo under $github_workspace, accesible by workflow
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
       # set up JDK
-      - uses: actions/setup-java@v1
+      - uses: actions/setup-java@v3
         with:
           java-version: '11'
       # set up maven cache
       - name: Cache Maven Package
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
