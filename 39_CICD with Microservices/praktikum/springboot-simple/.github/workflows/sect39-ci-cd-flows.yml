@@ -1,0 +1,34 @@
+name: CI-CD Pipeline Flows
+on:
+  # manual trigger workflow run
+  workflow_dispatch:
+  # trigger workflow on push branch master
+  push:
+    branches:
+      - master
+
+jobs:
+  # 1st Job, run Testing
+  tests:
+    name: Running Unit Test/Integration Test
+    # run on ubuntu with latest version
+    runs-on: ubuntu-latest
+    # jobs steps
+    steps:
+      # checkout repo under $github_workspace, accesible by workflow
+      - uses: actions/checkout@v1
+      # set up JDK
+      - uses: actions/setup-java@v1
+        with:
+          java-version: '11'
+      # set up maven cache
+      - name: Cache Maven Package
+        uses: actions/cache@v1
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+      # Run Test
+      - name: Run Tests
+        run:
+          mvn clean verify
