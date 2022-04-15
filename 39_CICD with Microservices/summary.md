@@ -42,3 +42,17 @@ Merupakan praktik yang memungkinkan untuk memberikan kode secara otomatis atau s
 
 #### GitHub Action
 GitHub Action mempermudah otomatisasi semua workflow dengan CI/CD kelas dunia. Dapat melakukan build, test, dan deploy melalui GitHub. Membuat review kode, branch management dan pembuatan issue sesuai dengan keinginan kita.
+
+## Task
+Implement CI/CD pada project.  
+Project yang saya implementasikan CI/CD menggunakan repository lain pada GitHub.  
+Link Repository: [link repository](https://github.com/doofensmith/springboot-cicd)
+
+Screenshot hasil :  
+- Github Action:  
+![gh.png](./screenshots/Screenshot%20(386).png)  
+- docker ps -a  
+![docker.png](./screenshots/Screenshot%20(387).png)
+- Test dengan postman
+![postman1.png](./screenshots/Screenshot%20(388).png)  
+![postman2.png](./screenshots/Screenshot%20(389).png)
